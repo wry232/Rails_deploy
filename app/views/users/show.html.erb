@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1><%= @user.name %></h1>
+    <form class="" action="/secrets" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <label for="New Secret">New Secret</label><br>
+      <textarea name="New Secret" rows="8" cols="80"></textarea><br>
+      <input type="submit" name="submit" value="Create Secret">
+    </form>
+    <h2>Secrets</h2><hr>
+    <% @user.secrets.each do |secret| %>
+    <p><%= secret.content %></p>
+    <p><%= secret.likes.count %> likes</p><hr>
+    <form class="" action="/secrets/<%= secret.id %>/delete" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="submit" name="delete_secret" value="Delete">
+    </form>
+    <% end %>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New User Registration</title>
+  </head>
+  <body>
+    <form class="" action="/users/new" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <label for="Email">Email</label>
+      <input type="text" name="Email" value=""><br>
+      <label for="Name">Name</label>
+      <input type="text" name="Name" value=""><br>
+      <label for="Password">Password</label>
+      <input type="password" name="Password" value=""><br>
+      <label for="Password Confirmation">Password Confirmation</label>
+      <input type="password" name="Password Confirmation" value=""><br>
+      <input type="submit" name="Join" value="Join">
+    </form>
+  </body>
+</html>
